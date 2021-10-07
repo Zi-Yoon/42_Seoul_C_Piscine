@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maff_revalpha.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 23:55:48 by byan              #+#    #+#             */
-/*   Updated: 2021/10/08 00:28:47 by byan             ###   ########.fr       */
+/*   Created: 2021/10/08 00:47:59 by byan              #+#    #+#             */
+/*   Updated: 2021/10/08 01:00:09 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int main(void)
+char *ft_strcpy(char *str1, char *str2)
 {
-    char even = 'z';
-    char odd = 'Y';
-    while (odd >= 'A')
+    int i = 0;
+    while (str2[i] != '\0')
     {
-        write(1, &even, 1);
-        write(1, &odd, 1);
-        even -= 2;
-        odd -= 2;
+        str1[i] = str2[i];
+        i++;
     }
-    write(1, '\n', 1);
-    return 0;
+    str1[i] = '\0';
+    return str1;
 }
