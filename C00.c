@@ -102,6 +102,7 @@ void print_num(char *arr, int size)
 void ft_print_comb(void)
 {
     // start num
+    int n = 3;
     int index = 0;
     char arr[3] = {'0','1','1'};
 
@@ -111,7 +112,7 @@ void ft_print_comb(void)
         int check_size = 0;
 
         // last number 9 -> change number
-        while(arr[2] == '9' - i + 1)
+        while(arr[3 - i] == '9' - i + 1)
         {
             check_size++;
             i++;
@@ -120,7 +121,7 @@ void ft_print_comb(void)
         // from back -> change number
         if(check_size > 0)
         {
-            arr[2 - check_size ]++;
+            arr[2 - check_size]++;
             while(check_size > 0)
             {
                 arr[3 - check_size] = arr[2 - check_size] + 1;
@@ -146,51 +147,49 @@ void ft_print_comb2(void)
     int b2 = 1;
     char arr1[2] = {'0', '0'};
     char arr2[2] = {'0', '0'};
+
     while(a1*10 + a2 != 99)
     {
-        while(b1*10 + b2 != 99)
+        while(b1*10 + b2 != 100)
         {
-            if(b2 == 9)
+            if(b2 == 10)
             {
                 b1++;
                 b2 = 0;
             }
-            arr2[0] += b1;
-            arr2[1] += b2;
+
+            arr1[0] = '0' + a1;
+            arr1[1] = '0' + a2;
+            arr2[0] = '0' + b1;
+            arr2[1] = '0' + b2;
+
             ft_putchar(arr1[0]);
             ft_putchar(arr1[1]);
             ft_putchar(' ');
             ft_putchar(arr2[0]);
             ft_putchar(arr2[1]);
-            ft_putchar(',');
-            ft_putchar(' ');
+            if(a1*10 + a1 != 98 || b1*10 + b2 != 99)
+            {
+                ft_putchar(',');
+                ft_putchar(' ');
+            }
             b2++;
         }
-        ft_putchar(arr1[0]);
-        ft_putchar(arr1[1]);
-        ft_putchar(' ');
-        ft_putchar(arr2[0]);
-        ft_putchar(arr2[1]);
         if(a1*10 + a2 == 98)
-        {
+        {   
             return;
         }
-        ft_putchar(',');
-        ft_putchar(' ');
-        if(a2 == 9)
+
+        a2++;
+        if(a2 == 10)
         {
             a1++;
             a2 = 0;
-        }
-        else
-        {
-            a2++;
         }
         b1 = a1;
         b2 = a2 + 1;
     }
 }
-
 
 // 07
 void ft_putnbr(int nb)
@@ -209,7 +208,7 @@ void ft_putnbr(int nb)
         temp = temp / 10;
         n++;
     }
-    for (int i = 0; i < n; i++)
+    for (int i = n; i < 0; i--)
     {
         ft_putchar(num[i]);
     }
@@ -241,7 +240,7 @@ void ft_print_combn(int n)
             check_size++;
             i++;
         }
-        
+
         // from back -> change number
         if(check_size > 0)
         {
@@ -264,7 +263,11 @@ void ft_print_combn(int n)
 int main(void)
 {
     ft_print_comb();
+    ft_putchar('\n');
     ft_print_comb2();
-    ft_print_combn(2);
+    ft_putchar('\n');
+    ft_putnbr(124897412);
+    ft_putchar('\n');
+
     return 0;
 }
