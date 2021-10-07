@@ -1,0 +1,43 @@
+#ex01
+groups $FT_USER | tr ' ' ',' | tr -d '\n'
+
+#ex02
+find . -name '*.sh' -print0 | xargs -0 basename -a -s .sh
+
+find . -type f -name "*.sh" -exec basename -s .sh {} \;
+
+find . -name '*.sh' -execdir basename {} .sh ';'
+
+#ex03
+find . -type f | wc -l | tr -d " "
+
+nb=0
+for fichier in `find .`
+do
+nb=`expr $nb + 1`
+done
+echo $nb
+
+#ex04
+ifconfig | grep ether | sed "s/ether //g" | grep -v media | tr -d ' ' | tr -d '\t'
+
+ifconfig -a | grep ether | awk -F' ' '{print $2}'
+
+#ex05
+# "\?$*'MaRViN'*$?\"
+# 42
+
+#ex06
+ls -l | sed -n 'p;n'
+
+#ex07
+sorted=(`printf "%s\n" "${liste[@]}" | sort -r`)
+out="${sorted[*]:`expr $FT_LINE1 - 1`:`expr $FT_LINE2 - $FT_LINE1 + 1`}"
+echo "${out[*]// /, }." | tr -d "\n"
+
+
+
+#ex08
+echo $FT_NBR1 + $FT_NBR2 | sed 's/\\/1/g' | sed 's/?/3/g' | sed 's/!/4/g' |
+sed "s/\'/0/g" | sed "s/\"/2/g" | tr "mrdoc" "01234" |
+xargs echo "ibase=5; obase=23;" | bc | tr "0123456789ABC" "gtaio luSnemf"
