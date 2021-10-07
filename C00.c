@@ -79,6 +79,7 @@ int ft_check_end(char *arr, int size)
     }
 }
 
+// last_num -> immediately stop
 void print_num(char *arr, int size)
 {
     for(int i = 0; i < size; i++)
@@ -139,12 +140,80 @@ void ft_print_comb(void)
 void ft_print_comb2(void)
 {
     int index = 0;
+    int a1 = 0;
+    int a2 = 0;
+    int b1 = 0;
+    int b2 = 1;
     char arr1[2] = {'0', '0'};
     char arr2[2] = {'0', '0'};
-
-    
+    while(a1*10 + a2 != 99)
+    {
+        while(b1*10 + b2 != 99)
+        {
+            if(b2 == 9)
+            {
+                b1++;
+                b2 = 0;
+            }
+            arr2[0] += b1;
+            arr2[1] += b2;
+            ft_putchar(arr1[0]);
+            ft_putchar(arr1[1]);
+            ft_putchar(' ');
+            ft_putchar(arr2[0]);
+            ft_putchar(arr2[1]);
+            ft_putchar(',');
+            ft_putchar(' ');
+            b2++;
+        }
+        ft_putchar(arr1[0]);
+        ft_putchar(arr1[1]);
+        ft_putchar(' ');
+        ft_putchar(arr2[0]);
+        ft_putchar(arr2[1]);
+        if(a1*10 + a2 == 98)
+        {
+            return;
+        }
+        ft_putchar(',');
+        ft_putchar(' ');
+        if(a2 == 9)
+        {
+            a1++;
+            a2 = 0;
+        }
+        else
+        {
+            a2++;
+        }
+        b1 = a1;
+        b2 = a2 + 1;
+    }
 }
 
+
+// 07
+void ft_putnbr(int nb)
+{
+    char num[20];
+    int temp = nb;
+    int n = 0;
+    for (int i = 0; i < 20; i++)
+    {
+        num[i] = '0';
+    }
+    while (temp > 0)
+    {
+        int per_temp = temp % 10;
+        num[n] += per_temp;
+        temp = temp / 10;
+        n++;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        ft_putchar(num[i]);
+    }
+}
 
 // 08
 void ft_print_combn(int n)
@@ -172,7 +241,7 @@ void ft_print_combn(int n)
             check_size++;
             i++;
         }
-
+        
         // from back -> change number
         if(check_size > 0)
         {
@@ -187,7 +256,6 @@ void ft_print_combn(int n)
         {
             arr[n - 1]++;
         }
-
         // print
         print_num(arr, n);
     }
@@ -195,6 +263,8 @@ void ft_print_combn(int n)
 
 int main(void)
 {
+    ft_print_comb();
+    ft_print_comb2();
     ft_print_combn(2);
     return 0;
 }
