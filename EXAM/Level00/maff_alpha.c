@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_z.c                                            :+:      :+:    :+:   */
+/*   maff_alpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 23:21:33 by byan              #+#    #+#             */
-/*   Updated: 2021/10/07 23:21:50 by byan             ###   ########.fr       */
+/*   Created: 2021/10/07 23:55:46 by byan              #+#    #+#             */
+/*   Updated: 2021/10/08 00:15:40 by byan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+int main(void)
 {
-    (void)ac;
-    (void)av;
-    write(1, "z", 1);
+    char even = 'B';
+    char odd = 'a';
+    while (even <= 'Z')
+    {
+        write(1, &odd, 1);
+        write(1, &even, 1);
+        odd += 2;
+        even += 2;
+    }
+    write(1, '\n', 1);
     return 0;
 }
