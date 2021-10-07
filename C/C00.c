@@ -268,6 +268,6 @@ int main(void)
     ft_putchar('\n');
     ft_putnbr(124897412);
     ft_putchar('\n');
-
+    ft_print_combn(5);
     return 0;
 }
