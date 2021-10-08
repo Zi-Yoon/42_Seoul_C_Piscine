@@ -101,15 +101,12 @@ int check_y(int y)
 void rush(int x, int y)
 {
     if(x == 0 || y == 0)
-    {
         return;
-    }
     x = check_x(x);
     y = check_y(y);
+    
     if (check_one(x, y) == 0)
-    {
         return;
-    }
     else
     {
         int temp_x = x - 2, temp_y = y - 2; // 2by2 code
