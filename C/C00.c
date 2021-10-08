@@ -101,25 +101,19 @@ void print_num(char *arr, int size)
 // 05
 void ft_print_comb(void)
 {
-    // start num
     int n = 3;
     int index = 0;
     char arr[3] = {'0','1','1'};
-
     while(ft_check_end(arr, 3) != 1)
     {
         int i = 1;
         int check_size = 0;
-
-        // last number 9 -> change number
-        while(arr[3 - i] == '9' - i + 1)
+        while(arr[3 - i] == '9' - i + 1) // last number 9 -> change number
         {
             check_size++;
             i++;
         }
-        
-        // from back -> change number
-        if(check_size > 0)
+        if(check_size > 0) // from back -> change number
         {
             arr[2 - check_size]++;
             while(check_size > 0)
