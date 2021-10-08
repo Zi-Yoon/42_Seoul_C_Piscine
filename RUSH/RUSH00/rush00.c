@@ -8,6 +8,7 @@ void put_for_y(int y) // if x == 1
     {
         ft_putchar('B');
         ft_putchar('\n');
+        y--;
     }
     ft_putchar('C');
     ft_putchar('\n');
@@ -19,6 +20,7 @@ void put_width(int i)
     while(i > 0)
     {
         ft_putchar('B');
+        i--;
     }
     ft_putchar('C');
     ft_putchar('\n');
@@ -30,6 +32,7 @@ void put_width_end(int i)
     while(i > 0)
     {
         ft_putchar(' ');
+        i--;
     }
     ft_putchar('B');
     ft_putchar('\n');
@@ -41,6 +44,7 @@ void put_width_reverse(int i)
     while(i > 0)
     {
         ft_putchar('B');
+        i--;
     }
     ft_putchar('A');
     ft_putchar('\n');
@@ -70,18 +74,39 @@ int check_one(int x, int y)
     }
 }
 
+int check_x(int x)
+{
+    if(x < 0)
+    {
+        return -x;
+    }
+    else
+    {
+        return x;
+    }
+}
+
+int check_y(int y)
+{
+    if(y < 0)
+    {
+        return -y;
+    }
+    else
+    {
+        return y;
+    }
+}
+
 void rush(int x, int y)
 {
     if(x == 0 || y == 0)
     {
         return;
     }
-    else if(x < 0)
-    {
-        int x = x * -1;
-    }
-
-    if(check_one(x, y) == 0)
+    x = check_x(x);
+    y = check_y(y);
+    if (check_one(x, y) == 0)
     {
         return;
     }
@@ -95,6 +120,6 @@ void rush(int x, int y)
             temp_y--;
         }
         put_width_reverse(temp_x);
+        return;
     }
-    
 }
