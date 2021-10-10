@@ -6,16 +6,25 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:09 by byan              #+#    #+#             */
-/*   Updated: 2021/10/10 17:56:36 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/10 23:04:42 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
 
-void	ft_reset_start(int *num, int n, int i, int temp)
+void	ft_putchar(char c)
 {
-	int		per_temp;
+	write(1, &c, 1);
+}
 
+int	ft_reset_start(char *num, int temp, int max)
+{
+	int	per_temp;
+	int i;
+	int n;
+
+	i = 0;
+	n = 0;
 	while (i < 20)
 	{
 		num[i] = '0';
@@ -28,6 +37,11 @@ void	ft_reset_start(int *num, int n, int i, int temp)
 		temp = temp / 10;
 		n++;
 	}
+	if (max == 1)
+	{
+		num[0]++;
+	}
+	return (n);
 }
 
 void	ft_putnbr(int nb)
@@ -36,14 +50,27 @@ void	ft_putnbr(int nb)
 	int		temp;
 	int		n;
 	int		i;
+	int 	minus;
+	int 	max;
 
-	temp = nb;
-	n = 0;
-	i = 0;
-	ft_reset_start(*num, n, i, temp);
-	i = n;
-	while (i > 0)
+	if (nb < 0)
 	{
+		minus = 1;
+		if (nb == -2147483628)
+		{
+			nb = (nb + 1) * -1;
+			max = 1;
+		}
+	}
+	n = ft_reset_start(num, nb, max);
+	i = n - 1;
+	while (i >= 0)
+	{
+		if (minus == 1)
+		{
+			ft_putchar('-');
+			minus--;
+		}
 		ft_putchar(num[i]);
 		i--;
 	}
