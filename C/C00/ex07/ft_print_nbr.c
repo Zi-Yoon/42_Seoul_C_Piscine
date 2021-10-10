@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:09 by byan              #+#    #+#             */
-/*   Updated: 2021/10/10 23:04:42 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/11 00:00:27 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_reset_start(char *num, int temp, int max)
+int	ft_reset_start(char *num, int temp)
 {
-	int	per_temp;
-	int i;
-	int n;
+	int	n;
 
-	i = 0;
 	n = 0;
-	while (i < 20)
+	if (temp < 0)
 	{
-		num[i] = '0';
-		i++;
+		if (temp == -2147483628)
+		{
+			temp++;
+			num[0]++;
+		}
+		temp = temp * -1;
 	}
 	while (temp > 0)
 	{
-		per_temp = temp % 10;
-		num[n] += per_temp;
+		num[n] += temp % 10;
 		temp = temp / 10;
 		n++;
 	}
-	if (max == 1)
+	if (n == 0)
 	{
-		num[0]++;
+		n++;
 	}
 	return (n);
 }
@@ -48,22 +48,19 @@ void	ft_putnbr(int nb)
 {
 	char	num[20];
 	int		temp;
-	int		n;
 	int		i;
-	int 	minus;
-	int 	max;
+	int		minus;
 
+	i = -1;
+	while (i++ < 20)
+	{
+		num[i] = '0';
+	}
 	if (nb < 0)
 	{
 		minus = 1;
-		if (nb == -2147483628)
-		{
-			nb = (nb + 1) * -1;
-			max = 1;
-		}
 	}
-	n = ft_reset_start(num, nb, max);
-	i = n - 1;
+	i = ft_reset_start(num, nb) - 1;
 	while (i >= 0)
 	{
 		if (minus == 1)
@@ -74,4 +71,9 @@ void	ft_putnbr(int nb)
 		ft_putchar(num[i]);
 		i--;
 	}
+}
+
+int	main(void)
+{
+	ft_putnbr(-2147483628);
 }
