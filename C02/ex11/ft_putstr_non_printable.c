@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byan <sss@student.42seoul.kr>              +#+  +:+       +#+        */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:41:54 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 21:31:00 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/12 01:20:59 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,4 @@ void	ft_putstr_non_printable(char *str)
 		}
 		i++;
 	}
-}
-
-int main(){
-	char abc[100] = "dsaf\nfdsa\adfkk\b\r";
-	ft_putstr_non_printable(abc);
-	printf("%s", abc);
-	return 0;
 }
