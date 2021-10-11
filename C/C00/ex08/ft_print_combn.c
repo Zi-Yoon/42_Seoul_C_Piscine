@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:15 by byan              #+#    #+#             */
-/*   Updated: 2021/10/10 20:41:27 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/10 20:43:18 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,12 @@ void	ft_print_num(char *arr, int n)
 	char b;
 
 	i = 0;
-	c_arr = arr[i];
+	
 	a = ',';
 	b = ' ';
 	while (i < n)
 	{
+		c_arr = arr[i];
 		write(1, &c_arr, 1);
 		i++;
 	}
@@ -98,11 +99,12 @@ void	ft_print_combn(int n)
 	int		check_size;
 
 	index = 0;
-	while (index < n)
+	while (index < n-1)
 	{
 		arr[index] = '0' + index;
 		index++;
 	}
+	arr[index] = arr[index - 1];
 	while (ft_check_end(arr, n, n) != 1)
 	{
 		i = 1;
