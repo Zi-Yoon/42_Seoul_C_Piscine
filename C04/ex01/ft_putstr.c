@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putstr(char *str)
 {
 	char	temp;
@@ -24,7 +22,7 @@ void	ft_putstr(char *str)
 		{
 			return ;
 		}
-		write (1, &temp, 1);
+		write(1, &temp, 1);
 		str++;
 	}
 }

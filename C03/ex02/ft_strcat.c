@@ -6,13 +6,13 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 03:21:16 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 14:18:59 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/12 21:45:54 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	char *p_dest;
+	char	*p_dest;
 
 	p_dest = dest;
 	while (*dest)
@@ -20,5 +20,5 @@ char	*ft_strcat(char *dest, char *src)
 	while (*src)
 		*dest++ = *src++;
 	*dest = '\0';
-	return p_dest;
+	return (p_dest);
 }

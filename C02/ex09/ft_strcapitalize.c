@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byan <sss@student.42seoul.kr>              +#+  +:+       +#+        */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:06:18 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 20:26:38 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/12 22:48:23 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 int	ft_strlen(char *str)
 {
@@ -51,7 +49,6 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 	int	j;
 	int	len;
-	int	max;
 
 	i = 0;
 	while (str[i] != '\0')

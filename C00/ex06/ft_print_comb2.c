@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:10 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 13:40:43 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/12 22:42:55 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	ft_print_comb2(void)
 {
 	int	num1;
 	int	num2;
-	int	temp1;
-	int	temp2;
 
 	num1 = 0;
 	num2 = 1;

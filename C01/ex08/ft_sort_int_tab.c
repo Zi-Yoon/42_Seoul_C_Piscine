@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byan <sss@student.42seoul.kr>              +#+  +:+       +#+        */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:03:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 15:45:00 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/12 22:44:54 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int	ft_i_sort(int *tab, int i, int start, int end)
 {

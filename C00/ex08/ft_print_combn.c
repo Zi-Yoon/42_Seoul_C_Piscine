@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:15 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 13:41:45 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/12 22:43:56 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	ft_print_num(char *arr, int n)
 {
 	int		i;
 	char	c_arr;
-	char	a;
-	char	b;
 
 	i = 0;
 	while (i < n)

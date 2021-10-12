@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 14:50:41 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 22:22:36 by byan             ###   ########seoul.kr  */
+/*   Created: 2021/10/12 17:02:33 by byan              #+#    #+#             */
+/*   Updated: 2021/10/12 21:42:44 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_atoi(char *str)
 {
-	int	len;
+	int	cnt;
+	int	minus;
+	int	answer;
 
-	len = 0;
-	while (1)
+	cnt = 0;
+	minus = 1;
+	answer = 0;
+	while (str[cnt] == ' ' || (str[cnt] >= 9 && str[cnt] <= 13))
+		cnt++;
+	if (str[cnt] == '+' || str[cnt] == '-')
 	{
-		if (*str == '\0')
-		{
-			return (len);
-		}
-		str++;
-		len++;
+		if (str[cnt] == '-')
+			minus *= -1;
+		cnt++;
 	}
+	while (str[cnt] >= '0' && str[cnt] <= '9')
+	{
+		answer = (answer * 10) + (str[cnt] - 48);
+		cnt++;
+	}
+	return (answer * minus);
 }
