@@ -1,47 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:41:54 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 14:26:20 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/12 02:03:52 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar_n(char c, int n)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int		i;
-	int		dec;
-	int		temp1;
-	int		temp2;
-	char	*hexa;
+	int i;
 
 	i = 0;
-	hexa = "0123456789abcdef";
-	while (str[i] != '\0')
+	while (i < n)
 	{
-		if (str[i] >= 32 && str[i] != 127)
-		{
-			ft_putchar(str[i]);
-		}
-		else
-		{
-			dec = str[i];
-			temp1 = dec / 16;
-			temp2 = dec % 16;
-			ft_putchar('\\');
-			ft_putchar(hexa[temp1]);
-			ft_putchar(hexa[temp2]);
-		}
+		write(1, &c, 1);
 		i++;
 	}
+}
+
+void	ft_make_hex(unsigned long long num, int is_hex)
+{
+	char	*str;
+
+	str = "0123456789abcdef";
+	if (num < 16 && is_hex == 1)
+		ft_putchar_n('0', 1);
+	if (num >= 16)
+	{
+		ft_make_hex(num / 16, 0);
+		ft_make_hex(num % 16, 0);
+	}
+	else
+		ft_putchar_n(str[num], 1);
+}
+
+void	ft_print_to_char(unsigned char *c, int size)
+{
+	int i;
+
+	i = -1;
+	while (i++ < 16)
+	{
+		if (i % 2 ==0)
+			ft_putchar_n(' ', 1);
+	}
+}
+
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	
+
 }
