@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:27:10 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 21:42:01 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/12 23:36:02 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ unsigned int	ft_change_nbr(int nbr, unsigned int n, char *base, char *temp)
 {
 	unsigned int	i;
 	int				temp_num;
-	int				minus;
 
 	i = 0;
 	temp_num = nbr;
@@ -69,10 +68,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	unsigned int	n_base;
 	unsigned int	n_nbr;
 	char			temp_str[100];
-	int				index;
 	int				minus;
 
-	index = 0;
 	minus = 1;
 	n_base = ft_find_base(base);
 	if (n_base == 0)
