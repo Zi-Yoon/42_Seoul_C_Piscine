@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 22:30:05 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/13 15:48:16 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_print_reverse_alphabet(void)
 	char	c;
 
 	c = 'z';
-	while (c <= 'a')
+	while (c >= 'a')
 	{
 		ft_putchar(c);
 		c--;

@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:15 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 22:43:56 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/13 15:48:39 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,10 @@ void	ft_print_combn(int n)
 	int		i;
 	int		check_size;
 
+	if (n <= 0 || n >= 10)
+		return ;
 	index = 0;
-	while (index < n - 1)
+	while (index <= n - 1)
 	{
 		arr[index] = '0' + index;
 		index++;

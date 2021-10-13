@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:09 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 13:41:15 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/13 15:24:05 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_reset_start(char *num, int temp)
 	n = 0;
 	if (temp < 0)
 	{
-		if (temp == -2147483628)
+		if (temp == -2147483648)
 		{
 			temp++;
 			num[0]++;
@@ -47,7 +47,6 @@ int	ft_reset_start(char *num, int temp)
 void	ft_putnbr(int nb)
 {
 	char	num[20];
-	int		temp;
 	int		i;
 	int		minus;
 
