@@ -6,11 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:28:58 by byan              #+#    #+#             */
-/*   Updated: 2021/10/11 14:16:01 by byan             ###   ########.fr       */
+/*   Updated: 2021/10/14 00:13:22 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft_ultimate_ft(int *********nbr)
+void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
