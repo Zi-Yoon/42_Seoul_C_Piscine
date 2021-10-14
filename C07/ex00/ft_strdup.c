@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:02:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/13 15:27:59 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/14 20:18:18 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen(char *str)
 {
-	int index;
+	int	index;
 
 	index = 0;
 	while (str[index] != '\0')
@@ -33,17 +33,21 @@ void	ft_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return (dest);
 }
 
 char	*ft_strdup(char *src)
 {
-	int	index;
-	char *dest;
-	int len;
+	int		index;
+	char	*dest;
+	int		len;
 
 	len = ft_strlen(src);
 	if (len <= 0)
-		return;
-	
+		return (0);
+	else
+	{
+		dest = (char *)malloc(sizeof(src) + 1);
+		ft_strcpy(dest, src);
+		return (dest);
+	}
 }
