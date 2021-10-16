@@ -6,27 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:06:18 by byan              #+#    #+#             */
-/*   Updated: 2021/10/15 00:04:08 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/16 21:29:13 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (1)
-	{
-		if (*str == '\0')
-		{
-			return (len);
-		}
-		str++;
-		len++;
-	}
-}
 
 int	ft_spc(char *str)
 {
