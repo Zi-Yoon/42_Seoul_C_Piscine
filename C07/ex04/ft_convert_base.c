@@ -6,11 +6,15 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/16 21:39:46 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 14:44:20 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
+
+long long	ft_make_digit(char *str, char *base, int len, int cnt);
+int			ft_len(int digit, int size);
 
 int	ft_check_base(char *base)
 {
@@ -38,76 +42,15 @@ int	ft_check_base(char *base)
 	return (i);
 }
 
-int	ft_exp(int a, int n)
-{
-	int	ans;
-
-	ans = 1;
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		ans *= a;
-		n--;
-	}
-	return (ans);
-}
-
-int	ft_plus_digit(int *temp, int n, int len)
-{
-	int	digit;
-	int	i;
-
-	i = 0;
-	digit = 0;
-	while (n-- > 0)
-	{
-		digit += temp[i] * ft_exp(len, n);
-		i++;
-	}
-	return (digit);
-}
-
-int	ft_make_digit(char *str, char *base, int len, int cnt)
-{
-	int	i;
-	int	n;
-	int	temp[30];
-
-	n = 0;
-	i = 30;
-	while (i--)
-		temp[i] = 0;
-	while (1)
-	{
-		i = 0;
-		while (str[cnt] != base[i] && i < len)
-			i++;
-		if (i >= len)
-			break ;
-		else
-		{
-			temp[n] = i;
-			cnt++;
-			n++;
-		}
-	}
-	return (ft_plus_digit(temp, n, len));
-}
-
-int	ft_atoi_base(char *str, char *base)
+long long	ft_atoi_base_edit(char *str, char *base)
 {
 	int	len;
 	int	cnt;
 	int	minus;
-	int	answer;
 
 	cnt = 0;
 	minus = 1;
-	answer = 0;
 	len = ft_check_base(base);
-	if (len == 0)
-		return (0);
 	while ((str[cnt] == ' ' || (str[cnt] >= 9 && str[cnt] <= 13)) && str[cnt])
 		cnt++;
 	while ((str[cnt] == '+' || str[cnt] == '-') && str[cnt])
@@ -119,8 +62,48 @@ int	ft_atoi_base(char *str, char *base)
 	return (ft_make_digit(str, base, len, cnt) * minus);
 }
 
-
-char	*ft_confvert_base(char *nbr, char *base_from, char *base_to)
+int	ft_digit_to_base(long long digit, int size, char *base_to, char *ans)
 {
+	long long	temp;
+	int			i;
+	int			len;
 
+	temp = digit;
+	len = 0;
+	len += ft_len(digit, 10);
+	if (temp < 0)
+	{
+		temp *= -1;
+		ans[0] = '-';
+		len++;
+	}
+	ans[len] = '\0';
+	i = len;
+	while (temp > 0)
+	{
+		ans[--len] = base_to[temp % size];
+		temp /= size;
+	}
+	return (i);
+}
+
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	int				len;
+	int				now;
+	int				after;
+	int				digit;
+	char			*ans;
+
+	now = ft_check_base(base_from);
+	after = ft_check_base(base_to);
+	if (now == 0 || after == 0)
+		return (0);
+	digit = ft_atoi_base_edit(nbr, base_from);
+	len = ft_len(digit, 10);
+	if (digit < 0)
+		len++;
+	ans = (char *)malloc(sizeof(char) * len + 1);
+	ft_digit_to_base(digit, after, base_to, ans);
+	return (ans);
 }

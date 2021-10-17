@@ -6,91 +6,76 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/16 21:39:50 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 14:43:20 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_putchar(char c)
+int	ft_len(int digit, int size)
 {
-	write(1, &c, 1);
+	int	len;
+
+	len = 0;
+	while (digit != 0)
+	{
+		digit /= size;
+		len++;
+	}
+	return (len);
 }
 
-int	ft_find_base(char *base)
+long long	ft_exp(int a, int n)
+{
+	long long	ans;
+
+	ans = 1;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		ans *= a;
+		n--;
+	}
+	return (ans);
+}
+
+long long	ft_plus_digit(int *temp, int n, int len)
+{
+	long long	digit;
+	int			i;
+
+	i = 0;
+	digit = 0;
+	while (n-- > 0)
+	{
+		digit += temp[i] * ft_exp(len, n);
+		i++;
+	}
+	return (digit);
+}
+
+long long	ft_make_digit(char *str, char *base, int len, int cnt)
 {
 	int	i;
-	int	j;
+	int	n;
+	int	temp[30];
 
-	i = 0;
-	while (base[i])
+	n = 0;
+	i = 30;
+	while (i--)
+		temp[i] = 0;
+	while (1)
 	{
-		if (base[i] == '+' || base[i] == '-')
-			return (0);
-		if (base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
-			return (0);
-		j = i + 1;
-		while (base[j])
+		i = 0;
+		while (str[cnt] != base[i] && i < len)
+			i++;
+		if (i >= len)
+			break ;
+		else
 		{
-			if (base[i] == base[j])
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	if (i <= 1)
-		return (0);
-	return (i);
-}
-
-unsigned int	ft_change_nbr(int nbr, unsigned int n, char *base, char *temp)
-{
-	unsigned int	i;
-	int				temp_num;
-
-	i = 0;
-	temp_num = nbr;
-	if (temp_num < 0)
-	{
-		temp_num *= -1;
-	}
-	while (temp_num != 0)
-	{
-		temp[i] = base[temp_num % n];
-		temp_num /= n;
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putnbr_base(int nbr, char *base)
-{
-	unsigned int	n_base;
-	unsigned int	n_nbr;
-	char			temp_str[100];
-	int				minus;
-
-	minus = 1;
-	n_base = ft_find_base(base);
-	if (n_base == 0)
-		return ;
-	if (nbr == 0)
-		ft_putchar(base[0]);
-	if (nbr < 0)
-		minus = -1;
-	else
-	{
-		n_nbr = ft_change_nbr(nbr, n_base, base, temp_str);
-		if (minus == -1)
-			ft_putchar('-');
-		while (n_nbr-- > 0)
-		{
-			ft_putchar(temp_str[n_nbr]);
+			temp[n] = i;
+			cnt++;
+			n++;
 		}
 	}
-}
-
-char	*ft_confvert_base(char *nbr, char *base_from, char *base_to)
-{
-	
+	return (ft_plus_digit(temp, n, len));
 }

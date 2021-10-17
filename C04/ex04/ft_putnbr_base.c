@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:27:10 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 23:36:02 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 12:51:48 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,16 @@ int	ft_find_base(char *base)
 	return (i);
 }
 
-unsigned int	ft_change_nbr(int nbr, unsigned int n, char *base, char *temp)
+unsigned int	ft_change_nbr(long long nbr, unsigned int n, char *base, char *temp)
 {
 	unsigned int	i;
-	int				temp_num;
+	int				check;
 
 	i = 0;
-	temp_num = nbr;
-	if (temp_num < 0)
+	while (nbr != 0)
 	{
-		temp_num *= -1;
-	}
-	while (temp_num != 0)
-	{
-		temp[i] = base[temp_num % n];
-		temp_num /= n;
+		temp[i] = base[nbr % n];
+		nbr /= n;
 		i++;
 	}
 	return (i);
@@ -68,24 +63,24 @@ void	ft_putnbr_base(int nbr, char *base)
 	unsigned int	n_base;
 	unsigned int	n_nbr;
 	char			temp_str[100];
+	long long		temp;
 	int				minus;
 
 	minus = 1;
+	temp = nbr;
 	n_base = ft_find_base(base);
 	if (n_base == 0)
 		return ;
-	if (nbr == 0)
+	if (temp == 0)
 		ft_putchar(base[0]);
-	if (nbr < 0)
-		minus = -1;
-	else
+	if (temp < 0)
 	{
-		n_nbr = ft_change_nbr(nbr, n_base, base, temp_str);
-		if (minus == -1)
-			ft_putchar('-');
-		while (n_nbr-- > 0)
-		{
-			ft_putchar(temp_str[n_nbr]);
-		}
+		minus = -1;
+		temp *= -1;
 	}
+	n_nbr = ft_change_nbr(temp, n_base, base, temp_str);
+	if (minus == -1)
+		ft_putchar('-');
+	while (n_nbr-- > 0)
+		ft_putchar(temp_str[n_nbr]);
 }

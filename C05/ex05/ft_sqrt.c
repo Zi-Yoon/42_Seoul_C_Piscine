@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 23:50:49 by byan              #+#    #+#             */
-/*   Updated: 2021/10/13 00:53:17 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 12:07:19 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_sqrt(int nb)
 	while (i * i <= nb)
 	{
 		if (i * i == nb)
-			return ((int)i);
+			return (i);
 		i++;
 	}
 	return (0);
