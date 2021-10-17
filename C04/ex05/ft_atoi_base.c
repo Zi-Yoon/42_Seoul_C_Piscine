@@ -6,11 +6,9 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:18:56 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 21:43:11 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 01:41:45 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_check_base(char *base)
 {
