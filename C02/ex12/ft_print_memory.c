@@ -6,54 +6,36 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:41:54 by byan              #+#    #+#             */
-/*   Updated: 2021/10/15 00:04:03 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 11:00:33 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_n(char c, int n)
+void	ft_putchar(char c)
 {
-	int i;
-
-	i = 0;
-	while (i < n)
-	{
-		write(1, &c, 1);
-		i++;
-	}
+	write(1, &c, 1);
 }
 
-void	ft_make_hex(unsigned long long num, int is_hex)
+void	ft_putstr_non_printable(char *str)
 {
-	char	*str;
+	int		dec;
+	char	*hexa;
 
-	str = "0123456789abcdef";
-	if (num < 16 && is_hex == 1)
-		ft_putchar_n('0', 1);
-	if (num >= 16)
+	hexa = "0123456789abcdef";
+	while (*str)
 	{
-		ft_make_hex(num / 16, 0);
-		ft_make_hex(num % 16, 0);
+		if (*str >= 32 && *str < 127)
+		{
+			ft_putchar(*str);
+		}
+		else if (*str >= 7 && *str <= 13)
+		{
+			dec = *str;
+			ft_putchar('\\');
+			ft_putchar(hexa[dec / 16]);
+			ft_putchar(hexa[dec % 16]);
+		}
+		str++;
 	}
-	else
-		ft_putchar_n(str[num], 1);
-}
-
-void	ft_print_to_char(unsigned char *c, int size)
-{
-	int i;
-
-	i = -1;
-	while (i++ < 16)
-	{
-		if (i % 2 ==0)
-			ft_putchar_n(' ', 1);
-	}
-}
-
-void	*ft_print_memory(void *addr, unsigned int size)
-{
-	
-
 }

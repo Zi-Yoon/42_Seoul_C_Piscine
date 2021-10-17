@@ -6,11 +6,33 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:06:18 by byan              #+#    #+#             */
-/*   Updated: 2021/10/16 21:29:13 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 10:58:56 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
+int	ft_char(char str)
+{
+	if ((str >= '0' && str <= '9') || (str >= 'a' && str <= 'z')
+		|| (str >= 'A' && str <= 'Z'))
+		return (1);
+	else
+		return (0);
+}
 
 int	ft_spc(char *str)
 {
@@ -19,10 +41,10 @@ int	ft_spc(char *str)
 	len = 0;
 	while (1)
 	{
-		if (*str == ' ' || *str == '\0')
-		{
+		if ((*str >= 32 && *str <= 47) || (*str >= 58 && *str <= 64)
+			|| (*str >= 91 && *str <= 96) || (*str >= 123 && *str <= 126)
+			|| *str == '\0')
 			return (len);
-		}
 		str++;
 		len++;
 	}
@@ -30,27 +52,28 @@ int	ft_spc(char *str)
 
 char	*ft_strcapitalize(char *str)
 {
-	int	i;
-	int	j;
-	int	len;
+	int		len;
+	int		idx;
+	char	*temp;
 
-	i = 0;
-	while (str[i] != '\0')
+	ft_strcpy(temp, str);
+	idx = 0;
+	while (temp[idx] != '\0')
 	{
-		while (str[i] == ' ')
-			i++;
-		len = ft_spc(&str[0] + i);
-		if (str[i] >= 'a' && str[i] <= 'z')
+		while (!ft_char(temp[idx]))
+			idx++;
+		len = ft_spc(&temp[idx]);
+		if (temp[idx] >= 'a' && temp[idx] <= 'z')
+			temp[idx] -= 32;
+		idx++;
+		while (len)
 		{
-			str[i] -= 32;
-		}
-		i++;
-		j = 1;
-		while (len--)
-		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-				str[i] += 32;
+			if (temp[idx] >= 'A' && temp[idx] <= 'Z')
+				temp[idx] += 32;
+			idx++;
+			len--;
 		}
 	}
+	str = temp;
 	return (str);
 }

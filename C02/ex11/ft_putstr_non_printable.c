@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:41:54 by byan              #+#    #+#             */
-/*   Updated: 2021/10/16 21:46:39 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/17 11:00:36 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,23 @@ void	ft_putchar(char c)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
 	int		dec;
-	int		temp1;
-	int		temp2;
 	char	*hexa;
 
-	i = 0;
 	hexa = "0123456789abcdef";
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (str[i] >= 32 && str[i] < 127 && str[i] != '\\')
+		if (*str >= 32 && *str < 127)
 		{
-			ft_putchar(str[i]);
+			ft_putchar(*str);
 		}
-		else if(str[i] == '\\')
+		else if (*str >= 7 && *str <= 13)
 		{
-			dec = str[i];
-			temp1 = dec / 16;
-			temp2 = dec % 16;
+			dec = *str;
 			ft_putchar('\\');
-			ft_putchar(hexa[temp1]);
-			ft_putchar(hexa[temp2]);
+			ft_putchar(hexa[dec / 16]);
+			ft_putchar(hexa[dec % 16]);
 		}
-		i++;
+		str++;
 	}
 }
