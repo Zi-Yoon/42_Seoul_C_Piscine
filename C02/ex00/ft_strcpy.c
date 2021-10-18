@@ -6,11 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 18:24:37 by byan              #+#    #+#             */
-/*   Updated: 2021/10/16 21:39:47 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 14:07:47 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -21,4 +21,5 @@ void	ft_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
+	return (dest);
 }

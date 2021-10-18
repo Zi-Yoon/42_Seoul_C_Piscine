@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 20:41:54 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 11:00:36 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 14:13:57 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putstr_non_printable(char *str)
 		{
 			ft_putchar(*str);
 		}
-		else if (*str >= 7 && *str <= 13)
+		else
 		{
 			dec = *str;
 			ft_putchar('\\');

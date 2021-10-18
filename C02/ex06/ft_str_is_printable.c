@@ -6,23 +6,24 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/15 00:04:10 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 14:11:06 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+int		ft_str_is_printable(char *str)
 {
-	int	i;
+	int		i;
+	char	a;
 
 	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i] >= ' ' && str[i] <= '~')
+	while (str[i] != '\0')
 	{
+		a = str[i];
+		if (!(a >= ' ' && a <= '~'))
+		{
+			return (0);
+		}
 		i++;
 	}
-	if (str[i] == '\0')
-		return (1);
-	else
-		return (0);
+	return (1);
 }

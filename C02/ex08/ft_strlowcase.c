@@ -6,38 +6,22 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:06:18 by byan              #+#    #+#             */
-/*   Updated: 2021/10/15 00:04:09 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 14:11:59 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (1)
-	{
-		if (*str == '\0')
-		{
-			return (len);
-		}
-		str++;
-		len++;
-	}
-}
-
 char	*ft_strlowcase(char *str)
 {
-	int	i;
-	int	max;
+	int		i;
+	char	a;
 
 	i = 0;
-	max = ft_strlen(str);
-	while (i < max)
+	while (str[i] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
+		a = str[i];
+		if (a >= 'A' && a <= 'Z')
 		{
-			str[i] += 32;
+			str[i] = a + 32;
 		}
 		i++;
 	}

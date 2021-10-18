@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 23:50:47 by byan              #+#    #+#             */
-/*   Updated: 2021/10/13 00:53:18 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 13:27:08 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_is_prime(int nb)
 	i = 2;
 	if (nb <= 1)
 		return (0);
-	while (1 <= (nb / 2))
+	while (i <= (nb / 2))
 	{
 		if (nb % i == 0)
 			return (0);

@@ -6,23 +6,24 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/15 00:04:11 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 14:10:46 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_uppercase(char *str)
 {
-	int	i;
+	int		i;
+	char	a;
 
 	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i] >= 'A' && str[i] <= 'Z')
+	while (str[i] != '\0')
 	{
+		a = str[i];
+		if (!(a >= 'A' && a <= 'Z'))
+		{
+			return (0);
+		}
 		i++;
 	}
-	if (str[i] == '\0')
-		return (1);
-	else
-		return (0);
+	return (1);
 }
