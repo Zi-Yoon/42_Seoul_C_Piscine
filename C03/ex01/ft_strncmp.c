@@ -6,25 +6,21 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 02:33:57 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 20:32:43 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 15:51:53 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned char	temp1;
-	unsigned char	temp2;
-	unsigned int	i;
-
-	i = -1;
-	while ((i++ < n) && (temp1 != '\0' || temp2 != '\0'))
+	while (*s1 != '\0' && *s2 != '\0' && n > 0)
 	{
-		temp1 = *s1;
-		temp2 = *s2;
-		if (temp1 > temp2 || temp1 < temp2)
-			return (temp1 - temp2);
+		if (*s2 != *s1)
+			break ;
 		s1++;
 		s2++;
+		n--;
 	}
-	return (temp1 - temp2);
+	if (n == 0)
+		return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

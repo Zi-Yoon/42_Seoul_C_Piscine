@@ -6,11 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 14:11:06 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 15:28:39 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int		i;
 	char	a;

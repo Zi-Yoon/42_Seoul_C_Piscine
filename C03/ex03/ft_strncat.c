@@ -6,27 +6,29 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:19:17 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 20:46:38 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 15:53:33 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char	*temp;
+	int				digit;
+	unsigned int	i;
+	unsigned int	j;
 
-	temp = dest;
-	if (nb)
+	digit = 0;
+	while (dest[digit] != '\0')
 	{
-		while (*dest)
-			dest++;
-		while (*src)
-		{
-			*dest++ = *src++;
-			if (--nb == 0)
-			{
-				*dest = '\0';
-				break ;
-			}
-		}
+		digit++;
 	}
-	return (temp);
+	i = digit;
+	j = 0;
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
