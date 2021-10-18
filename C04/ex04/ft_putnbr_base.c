@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:27:10 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 12:51:48 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 13:10:10 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int	ft_find_base(char *base)
 	return (i);
 }
 
-unsigned int	ft_change_nbr(long long nbr, unsigned int n, char *base, char *temp)
+unsigned int	ft_change_nbr(long long nbr,
+							unsigned int n, char *base, char *temp)
 {
 	unsigned int	i;
-	int				check;
 
 	i = 0;
 	while (nbr != 0)

@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:09 by byan              #+#    #+#             */
-/*   Updated: 2021/10/12 17:28:03 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 13:10:11 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	ft_reset_start(char *num, int temp)
 void	ft_putnbr(int nb)
 {
 	char	num[20];
-	int		temp;
 	int		i;
 	int		minus;
 

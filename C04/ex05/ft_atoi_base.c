@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:18:56 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 01:41:45 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 13:10:09 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,9 @@ int	ft_atoi_base(char *str, char *base)
 	int	len;
 	int	cnt;
 	int	minus;
-	int	answer;
 
 	cnt = 0;
 	minus = 1;
-	answer = 0;
 	len = ft_check_base(base);
 	if (len == 0)
 		return (0);
