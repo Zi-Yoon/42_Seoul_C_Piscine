@@ -6,60 +6,38 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:06:18 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 14:29:58 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/18 19:22:47 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_check_alphabet(char *str, int i)
-{
-	if (str[i] >= 'a' && str[i] <= 'z')
-		return (1);
-	else if (str[i] >= 'A' && str[i] <= 'Z')
-		return (2);
-	else
-		return (0);
-}
-
-int	ft_capitalizer(char *str, int i)
-{
-	if (ft_check_alphabet(str, i) == 1)
-		str[i] = str[i] - 32;
-	i++;
-	while (ft_check_alphabet(str, i) && str[i] != '\0')
-	{
-		if (ft_check_alphabet(str, i) == 2)
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_strlowcase(char *str, int i)
-{
-	while (ft_check_alphabet(str, i) && str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (i);
-}
+#include <unistd.h>
 
 char	*ft_strcapitalize(char *str)
 {
-	int	i;
+	int		i;
+	int		next;
+	char	c;
 
 	i = 0;
-	if (ft_check_alphabet(str, 0) == 1)
-		i = ft_capitalizer(str, i);
-	while (str[i] != '\0')
+	next = 1;
+	while (*(str + i) != '\0')
 	{
-		while (!(ft_check_alphabet(str, i)) && str[i] != '\0')
-			i++;
-		if (str[i - 1] >= '0' && str[i - 1] <= '9')
-			i = ft_strlowcase(str, i);
-		else if (ft_check_alphabet(str, i))
-			i = ft_capitalizer(str, i);
+		c = *(str + i);
+		if (next == 1 && c >= 'a' && c <= 'z')
+			str[i] -= 32;
+		else if (next == 0 && c >= 'A' && c <= 'Z')
+			str[i] += 32;
+		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 122)
+			next = 1;
+		else
+			next = 0;
+		i++;
 	}
 	return (str);
+}
+
+int main (){
+	char arr[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un" ;
+	ft_strcapitalize(arr);
+	printf("%s", arr);
 }

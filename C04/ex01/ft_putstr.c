@@ -14,17 +14,9 @@
 
 void	ft_putstr(char *str)
 {
-	char	temp;
-
-	temp = 0;
-	while (1)
+	while (*str != '\0')
 	{
-		temp = *str;
-		if (temp == '\0')
-		{
-			return ;
-		}
-		write(1, &temp, 1);
+		write(1, str, 1);
 		str++;
 	}
 }

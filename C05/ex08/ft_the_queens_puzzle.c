@@ -6,31 +6,31 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 23:50:42 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 13:20:35 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 02:50:43 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
+#include <unistd.h>
 
-// int	**make_chess(void)
-// {
-// 	int arr[10][10];
-// 	int	i;
-// 	int	j;
+int	**make_chess(void)
+{
+	int arr[10][10];
+	int	i;
+	int	j;
 
-// 	while (i < 10)
-// 	{
-// 		while (j < 10)
-// 		{
-// 			arr[i][j] = 1;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
+	while (i < 10)
+	{
+		while (j < 10)
+		{
+			arr[i][j] = 1;
+			j++;
+		}
+		i++;
+	}
+}
 
-// int	ft_the_queens_puzzle(void)
-// {
-// 	make_chess ();
-// 	return (0);
-// }
+int	ft_the_queens_puzzle(void)
+{
+	make_chess();
+	return (0);
+}

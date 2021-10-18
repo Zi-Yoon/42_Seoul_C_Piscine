@@ -6,31 +6,30 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:02:33 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 13:10:11 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 02:49:33 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char *str)
 {
-	int	cnt;
-	int	minus;
-	int	answer;
+	int			minus;
+	long long	answer;
 
-	cnt = 0;
 	minus = 1;
 	answer = 0;
-	while (str[cnt] == ' ' || (str[cnt] >= 9 && str[cnt] <= 13))
-		cnt++;
-	if (str[cnt] == '+' || str[cnt] == '-')
+	while (((*str >= 9 && *str <= 13) || (*str >= 32 && *str <= 47)
+			|| (*str >= 58 && *str <= 126)) && *str != '+' && *str != '-')
+		str++;
+	while ((*str == '+' || *str == '-') && *str)
 	{
-		if (str[cnt] == '-')
+		if (*str == '-')
 			minus *= -1;
-		cnt++;
+		str++;
 	}
-	while (str[cnt] >= '0' && str[cnt] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		answer = (answer * 10) + (str[cnt] - 48);
-		cnt++;
+		answer = (answer * 10) + (*str - 48);
+		str++;
 	}
 	return (answer * minus);
 }

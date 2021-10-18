@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 14:44:20 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 03:09:17 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ long long	ft_atoi_base_edit(char *str, char *base)
 	cnt = 0;
 	minus = 1;
 	len = ft_check_base(base);
-	while ((str[cnt] == ' ' || (str[cnt] >= 9 && str[cnt] <= 13)) && str[cnt])
+	while (((*str >= 9 && *str <= 13) || (*str >= 32 && *str <= 47)
+			|| (*str >= 58 && *str <= 126)) && *str != '+' && *str != '-')
 		cnt++;
 	while ((str[cnt] == '+' || str[cnt] == '-') && str[cnt])
 	{

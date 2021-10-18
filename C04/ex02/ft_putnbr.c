@@ -6,62 +6,71 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:29:09 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 13:10:11 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 02:56:00 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
 }
 
-int	ft_reset_start(char *num, int temp)
+int	ft_len_num(long long num)
 {
-	int	n;
+	int	len;
 
-	n = 0;
-	if (temp < 0)
+	len = 0;
+	while (num != 0)
 	{
-		if (temp == -2147483628)
-		{
-			temp++;
-			num[0]++;
-		}
-		temp = temp * -1;
+		num /= 10;
+		len++;
 	}
-	while (temp > 0)
+	return (len);
+}
+
+void	ft_itoa_print(long long num)
+{
+	int		len;
+	int		minus;
+	char	temp[20];
+
+	minus = 1;
+	if (num < 0)
 	{
-		num[n] += temp % 10;
-		temp = temp / 10;
-		n++;
+		minus = -1;
+		num *= -1;
+		temp[0] = '-';
 	}
-	if (n == 0)
-		n++;
-	return (n);
+	len = ft_len_num(num);
+	temp[len + 1] = '\0';
+	while (len > 0)
+	{
+		temp[len] = '0' + num % 10;
+		num /= 10;
+		len--;
+	}
+	if (minus == -1)
+		ft_putstr(&temp[0]);
+	else
+		ft_putstr(&temp[1]);
 }
 
 void	ft_putnbr(int nb)
 {
-	char	num[20];
-	int		i;
-	int		minus;
+	long long		num;
+	int				len;
 
-	i = -1;
-	while (i++ < 20)
-		num[i] = '0';
-	if (nb < 0)
-		minus = 1;
-	i = ft_reset_start(num, nb) - 1;
-	while (i >= 0)
+	num = nb;
+	if (num == 0)
 	{
-		if (minus == 1)
-		{
-			ft_putchar('-');
-			minus--;
-		}
-		ft_putchar(num[i]);
-		i--;
+		ft_putstr("0");
+		return ;
 	}
+	ft_itoa_print(num);
 }
