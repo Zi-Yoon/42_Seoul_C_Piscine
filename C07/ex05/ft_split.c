@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:04:08 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 01:53:45 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 01:57:16 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_strlen(char *str, int mode)
 		str++;
 		len++;
 	}
+	return (0);
 }
 
 void	ft_strcpy(char *dest, char *src, int mode)
