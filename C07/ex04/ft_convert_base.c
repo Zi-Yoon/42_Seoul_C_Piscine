@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 03:09:17 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 16:50:07 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 long long	ft_make_digit(char *str, char *base, int len, int cnt);
-int			ft_len(int digit, int size);
+int			ft_len(long long digit, int size);
 
 int	ft_check_base(char *base)
 {
@@ -70,21 +70,27 @@ int	ft_digit_to_base(long long digit, int size, char *base_to, char *ans)
 	int			len;
 
 	temp = digit;
-	len = 0;
-	len += ft_len(digit, 10);
+	len = ft_len(digit, size);
 	if (temp < 0)
 	{
 		temp *= -1;
 		ans[0] = '-';
 		len++;
 	}
+	if (temp == 0)
+		len = 1;
 	ans[len] = '\0';
 	i = len;
+	if (temp == 0)
+	{
+		ans[0] = base_to[0];
+	}
 	while (temp > 0)
 	{
 		ans[--len] = base_to[temp % size];
 		temp /= size;
 	}
+	
 	return (i);
 }
 
@@ -93,7 +99,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	int				len;
 	int				now;
 	int				after;
-	int				digit;
+	long long		digit;
 	char			*ans;
 
 	now = ft_check_base(base_from);
@@ -101,9 +107,11 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (now == 0 || after == 0)
 		return (0);
 	digit = ft_atoi_base_edit(nbr, base_from);
-	len = ft_len(digit, 10);
+	len = ft_len(digit, after);
 	if (digit < 0)
 		len++;
+	else if (digit == 0)
+		len = 1;
 	ans = (char *)malloc(sizeof(char) * len + 1);
 	ft_digit_to_base(digit, after, base_to, ans);
 	return (ans);

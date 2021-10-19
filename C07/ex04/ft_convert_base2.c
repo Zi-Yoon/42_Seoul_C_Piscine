@@ -6,11 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 03:09:25 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/19 16:50:07 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_len(int digit, int size)
+int	ft_len(long long digit, int size)
 {
 	int	len;
 
