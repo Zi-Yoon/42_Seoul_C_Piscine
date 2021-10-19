@@ -6,51 +6,114 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:04:08 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 15:36:11 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 01:53:45 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strlen(char *str, int mode)
+{
+	int	len;
+
+	len = 0;
+	while (mode == 1)
+	{
+		if (*str == '\0')
+			return (len);
+		str++;
+		len++;
+	}
+	while (mode == 2)
+	{
+		if (*str == ' ' || *str == '\0')
+			return (len);
+		str++;
+		len++;
+	}
+}
+
+void	ft_strcpy(char *dest, char *src, int mode)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (mode == 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (mode == 2 && src[i] != '\0' && src[i] != ' ')
 	{
-		dest[i] = '\0';
+		dest[i] = src[i];
 		i++;
 	}
-	return (dest);
+	dest[i] = '\0';
 }
 
-int	ft_str_find(char *str, char *charset)
+int	ft_len(char *temp)
 {
-	
+	int	i;
+	int	len;
+
+	i = -1;
+	len = 0;
+	while (temp[++i])
+	{
+		while (temp[i] != ' ' && temp[i] != '\0')
+		{
+			i++;
+			if (temp[i] == ' ' || temp[i] == '\0')
+				len++;
+		}
+	}
+	return (len);
 }
 
-void	ft_new_arr(char **array, char *charset)
+int	ft_seperate_str(char *temp, char *charset, int char_len)
 {
-	*array = (char *)malloc(sizeof(char) * );
+	int	i;
+	int	j;
+
+	i = -1;
+	while (temp[++i])
+	{
+		j = -1;
+		while (++j < char_len)
+		{
+			if (temp[i] == charset[j])
+				temp[i] = ' ';
+		}
+	}
+	return (ft_len(temp));
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	int		index;
-	int		size;
-	char	**array;
-	
-	index = 0;
-	if (!(array = (char **)malloc(sizeof(char *) * )))
-		return (0);
-	
+	int		i;
+	int		char_len;
+	int		str_len;
+	char	**arr;
+	char	*temp;
 
-
-	array[index] = 0;
+	temp = (char *)malloc(sizeof(char) * ft_strlen(str, 1) + 1);
+	ft_strcpy(temp, str, 1);
+	str_len = ft_seperate_str(temp, charset, ft_strlen(charset, 1));
+	i = -1;
+	arr = (char **)malloc(sizeof(char *) * str_len);
+	while (i++ < str_len)
+	{
+		while (*temp == ' ' && *temp != '\0')
+			temp++;
+		if (*temp != ' ' && *temp != '\0')
+		{
+			char_len = ft_strlen(temp, 2);
+			arr[i] = (char *)malloc(sizeof(char) * char_len + 1);
+			ft_strcpy(arr[i], temp, 2);
+			temp += char_len;
+		}
+	}
+	return (arr);
 }

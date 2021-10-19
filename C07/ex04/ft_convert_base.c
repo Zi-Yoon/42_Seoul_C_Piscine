@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 16:50:07 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 01:38:50 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,12 @@ int	ft_digit_to_base(long long digit, int size, char *base_to, char *ans)
 	ans[len] = '\0';
 	i = len;
 	if (temp == 0)
-	{
 		ans[0] = base_to[0];
-	}
 	while (temp > 0)
 	{
 		ans[--len] = base_to[temp % size];
 		temp /= size;
 	}
-	
 	return (i);
 }
 
