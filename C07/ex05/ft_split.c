@@ -6,12 +6,10 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:04:08 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 01:57:16 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 01:59:54 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str, int mode)
