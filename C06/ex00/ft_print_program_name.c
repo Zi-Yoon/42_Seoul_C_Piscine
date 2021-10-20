@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 00:58:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 19:25:20 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 21:16:10 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr(char *str)
 int	main(int argc, char *argv[])
 {
 	argc = 1;
-	ft_putstr(argv[argc-1]);
+	ft_putstr(argv[argc - 1]);
 	write(1, "/n", 1);
 	return (0);
 }
