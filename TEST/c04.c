@@ -15,15 +15,15 @@ int main()
 	// ft_putstr("hello");
 	// printf("\n");
 
-	// ft_putnbr(-2147483647);
-	// printf("\n");
+	ft_putnbr(-2147483647);
+	printf("\n");
 
-	printf("%d", ft_atoi("  asdff-+--+1241612"));
+	printf("%d", ft_atoi("  asdff-+--+12418612552"));
 	printf("\n");
 
 	ft_putnbr_base(123458, "0123456789");
 	printf("\n");
 
-	printf("%d",ft_atoi_base("-12394abd","0123456789"));
+	printf("%d",ft_atoi_base("-12394abd","abjchdhfuasdjkvsdank"));
 	printf("\n");
 }

@@ -6,12 +6,12 @@
 #    By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 22:42:23 by byan              #+#    #+#              #
-#    Updated: 2021/10/20 12:43:21 by byan             ###   ########seoul.kr   #
+#    Updated: 2021/10/20 15:58:50 by byan             ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
-SRCS	= srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c srcs/ft_swap.c
+NAME	= ft_display_file
+SRCS	= srcs/main.c
 OBJS	= ${SRCS:.c=.o}
 LIBC	= ar rc
 LIBR	= ranlib
@@ -34,10 +34,3 @@ clean:
 
 fclean: clean
 	${RM} ${NAME}
-
-re: fclean all
-
-norm :
-	norminette -R CheckForbiddenSourceHeader */*.[ch]
-
-.PHONY: all clean fclean re .c.o norm
