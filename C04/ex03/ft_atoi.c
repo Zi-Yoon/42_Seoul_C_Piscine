@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:02:33 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 16:32:16 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/20 21:27:37 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_atoi(char *str)
 	minus = 1;
 	answer = 0;
 	while (*str == '\t' || *str == '\n' || *str == '\v'
-			|| *str == '\f' || *str == '\r' || *str == ' ')
+		|| *str == '\f' || *str == '\r' || *str == ' ')
 		str++;
 	while ((*str == '+' || *str == '-'))
 	{
