@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 23:50:45 by byan              #+#    #+#             */
-/*   Updated: 2021/10/18 13:27:15 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/21 21:57:28 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,11 @@ int	ft_find_next_prime(int nb)
 		return (nb);
 	else
 	{
-		if (nb % 2 == 0)
-			nb++;
 		while (1)
 		{
 			if (ft_prime(nb) == 1)
 				return (nb);
-			nb = nb + 2;
+			nb++;
 		}
 	}
 }

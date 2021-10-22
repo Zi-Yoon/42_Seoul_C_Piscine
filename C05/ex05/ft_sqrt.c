@@ -6,13 +6,15 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 23:50:49 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 02:53:06 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/21 21:48:49 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_sqrt(int nb)
 {
-	int	i;
+	long	i;
 
 	i = 1;
 	if (nb <= 0)

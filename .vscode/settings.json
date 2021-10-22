@@ -2,6 +2,8 @@
     "files.associations": {
 		"unistd.h": "c",
 		"stdlib.h": "c",
-		"uio.h": "c"
+		"uio.h": "c",
+		"ft_read_make.h": "c",
+		"ft_read.h": "c"
 	}
 }

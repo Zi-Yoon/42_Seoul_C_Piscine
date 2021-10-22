@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 18:18:56 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 21:27:48 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/21 21:41:49 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ int	ft_atoi_base(char *str, char *base)
 	len = ft_check_base(base);
 	if (len == 0)
 		return (0);
-	while (*str == '\t' || *str == '\n' || *str == '\v'
-		|| *str == '\f' || *str == '\r' || *str == ' ')
+	while (str[cnt] == '\t' || str[cnt] == '\n' || str[cnt] == '\v'
+		|| str[cnt] == '\f' || str[cnt] == '\r' || str[cnt] == ' ')
 		cnt++;
 	while ((str[cnt] == '+' || str[cnt] == '-') && str[cnt])
 	{
