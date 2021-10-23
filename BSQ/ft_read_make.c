@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_make.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/22 20:32:43 by byan              #+#    #+#             */
+/*   Updated: 2021/10/23 03:23:39 by byan             ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_read_make.h"
 
 int	ft_min_three(int a, int b, int c)
@@ -27,25 +39,31 @@ int	**ft_make_empty_box(int map_row, int map_col)
 int	**ft_make_real_box(char *f_name, int **map, int map_row, int map_col)
 {
 	char	temp;
+	char	str[2];
+	int		file;
 	int		i;
 	int		j;
 
 	i = 0;
+	file = ft_open_read(f_name);
+	read(file, &temp, 4);
+	str[0] = ft_read_empty(f_name);
+	str[1] = ft_read_fill(f_name);
 	while (i < map_row)
 	{
 		j = -1;
 		while (++j < map_col)
 		{
-			read(ft_open_read(f_name), &temp, 1);
-			if (temp == '.')
+			read(file, &temp, 1);
+			if (temp == str[0])
 				map[i][j] = 1;
-			else if (temp == 'o')
+			else if (temp == str[1])
 				map[i][j] = 0;
 			else if (temp == '\n')
 				i++;
 			else
 			{
-				write(1, "map error\n", 10);
+				// error
 				return (0);
 			}
 		}

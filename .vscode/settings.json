@@ -4,6 +4,8 @@
 		"stdlib.h": "c",
 		"uio.h": "c",
 		"ft_read_make.h": "c",
-		"ft_read.h": "c"
+		"ft_read.h": "c",
+		"ft_read_second.h": "c",
+		"type_traits": "c"
 	}
 }

@@ -1,4 +1,16 @@
-#include "ft_read.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_first.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/23 00:53:14 by byan              #+#    #+#             */
+/*   Updated: 2021/10/23 13:02:03 by byan             ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_read_first.h"
 
 /* file open */
 int	ft_open_read(char *f_name)
@@ -20,6 +32,7 @@ int	ft_file_size(char *f_name)
 	file = ft_open_read(f_name);
 	while (read(file, &temp, 1) != 0)
 		size++;
+	size = size - 4;
 	close(file);
 	return (size);
 }
@@ -38,6 +51,7 @@ int	ft_num_row(char *f_name)
 		if (temp == '\n')
 			row++;
 	}
+	row--;
 	close(file);
 	return (row);
 }
@@ -53,6 +67,7 @@ int	ft_num_col(char *f_name)
 	cnt = 0;
 	col = 0;
 	file = ft_open_read(f_name);
+	read(file, &temp, 4);
 	while (read(file, &temp, 1) != 0)
 	{
 		if (temp == '\n')
@@ -72,5 +87,8 @@ int	ft_check_rec(int size, int map_row, int map_col)
 	if (cal_size == size)
 		return (1);
 	else
+	{
+		ft_map_error();
 		return (0);
+	}		
 }

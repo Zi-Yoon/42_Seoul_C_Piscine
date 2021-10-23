@@ -1,0 +1,37 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    MAKEFILE                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/22 20:50:22 by byan              #+#    #+#              #
+#    Updated: 2021/10/23 00:42:50 by byan             ###   ########seoul.kr   #
+#                                                                              #
+# **************************************************************************** #
+
+SRCS	= main.c ft_final.c ft_bsq.c ft_send_ans.c ft_read_make.c ft_read.c
+OBJS    = ${SRCS:.c=.o}
+INCS	= ./
+NAME	= ft_bsq
+CC		= gcc
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror
+
+.c.o :
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
+
+${NAME} : ${OBJS}
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+
+all : ${NAME}
+
+run : ./${NAME}
+
+clean :	${RM} ${OBJS}
+
+fclean : clean ${RM} ${NAME}
+
+re : fclean all
+
+.PHONY: all clean fclean re .c.o

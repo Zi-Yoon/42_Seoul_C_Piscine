@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_final.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 20:32:21 by byan              #+#    #+#             */
-/*   Updated: 2021/10/22 21:10:41 by byan             ###   ########seoul.kr  */
+/*   Created: 2021/10/22 21:01:39 by byan              #+#    #+#             */
+/*   Updated: 2021/10/22 21:10:33 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_main_header.h"
+#ifndef FT_FINAL_H
+# define FT_FINAL_H
 
-int	main(int argc, char *argv[])
-{
-	char	*f_name;
-	int		i;
+# include "ft_main_header.h"
 
-	i = 0;
-	if (argc == 1)
-	{
-		return (0);
-	}
-	else if (argc == 2)
-	{
-		ft_start(argv[1]);
-	}
-	else if (argc >= 3)
-	{
-		while (++i < argc)
-			ft_start(argv[i]);
-	}
-	return (0);
-}
-
+#endif

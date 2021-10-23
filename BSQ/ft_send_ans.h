@@ -1,9 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_send_ans.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/22 20:32:33 by byan              #+#    #+#             */
+/*   Updated: 2021/10/22 21:09:22 by byan             ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_SEND_ANS_H
 # define FT_SEND_ANS_H
 
-# include "ft_read_make.h"
-
-int	ft_ans_x(int **map, int max_len, int map_row, int map_col);
-int	ft_ans_y(int **map, int max_len, int map_row, int map_col);
+# include "ft_main_header.h"
 
 #endif

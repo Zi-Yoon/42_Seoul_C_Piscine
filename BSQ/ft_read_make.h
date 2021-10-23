@@ -1,13 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_make.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/22 20:32:40 by byan              #+#    #+#             */
+/*   Updated: 2021/10/22 21:09:19 by byan             ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_READ_MAKE_H
 # define FT_READ_MAKE_H
 
-# include <stdlib.h>
-# include "ft_read.h"
-
-int	ft_min_three(int a, int b, int c);
-int	**ft_make_empty_box(int map_row, int map_col);
-int	**ft_make_real_box(char *f_name, int **box, int map_row, int map_col);
-int	**ft_make_len_map(int **map, int map_row, int map_col);
-int	ft_find_max_len(int **map, int map_row, int map_col);
+# include "ft_main_header.h"
 
 #endif
