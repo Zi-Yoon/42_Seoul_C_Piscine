@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 00:58:04 by byan              #+#    #+#             */
-/*   Updated: 2021/10/21 22:04:06 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/23 19:31:09 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char *argv[])
 {
-	if (argc > 0)
+	argc = 0;
+	while (argc >= 0)
 	{
-		ft_putstr(argv[0]);
-		write(1, "/n", 1);
+		break ;
 	}
+	ft_putstr(argv[0]);
+	write(1, "/n", 1);
+	
 	return (0);
 }
