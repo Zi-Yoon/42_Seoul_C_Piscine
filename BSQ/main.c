@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:21 by byan              #+#    #+#             */
-/*   Updated: 2021/10/22 21:10:41 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/24 19:40:14 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,30 @@
 
 int	main(int argc, char *argv[])
 {
-	char	*f_name;
-	int		i;
+	char	**no_argv;
+	t_bsq	*data;
 
-	i = 0;
+	data = malloc(sizeof(t_bsq));
+	data->last_file_num = argc;
+	data->now_file_num = 0;
+	data->ans_x = 0;
+	data->ans_y = 0;
 	if (argc == 1)
 	{
+		ft_no_argv(data);
+		ft_start_run(argv, data);
+		free(data);
 		return (0);
 	}
-	else if (argc == 2)
+	else 
 	{
-		ft_start(argv[1]);
+		while (++data->now_file_num < argc)
+		{
+			data->error = 0;
+			ft_start_run(argv, data);
+			free(data);
+		}
+		return (0);
 	}
-	else if (argc >= 3)
-	{
-		while (++i < argc)
-			ft_start(argv[i]);
-	}
-	return (0);
 }
 

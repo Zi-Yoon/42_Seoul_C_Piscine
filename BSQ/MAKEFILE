@@ -6,14 +6,14 @@
 #    By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 20:50:22 by byan              #+#    #+#              #
-#    Updated: 2021/10/23 00:42:50 by byan             ###   ########seoul.kr   #
+#    Updated: 2021/10/24 19:50:12 by byan             ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c ft_final.c ft_bsq.c ft_send_ans.c ft_read_make.c ft_read.c
+SRCS	= main.c ft_final.c ft_bsq.c ft_error.c ft_make.c ft_read.c
 OBJS    = ${SRCS:.c=.o}
 INCS	= ./
-NAME	= ft_bsq
+NAME	= bsq_byan
 CC		= gcc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror

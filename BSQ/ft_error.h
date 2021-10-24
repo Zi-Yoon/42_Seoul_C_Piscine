@@ -6,7 +6,13 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:03:24 by byan              #+#    #+#             */
-/*   Updated: 2021/10/23 01:03:31 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/24 13:46:44 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_ERROR_H
+# define FT_ERROR_H
+
+# include "ft_main_header.h"
+
+#endif

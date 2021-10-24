@@ -6,6 +6,9 @@
 		"ft_read_make.h": "c",
 		"ft_read.h": "c",
 		"ft_read_second.h": "c",
-		"type_traits": "c"
+		"type_traits": "c",
+		"ft_final.h": "c",
+		"limits": "c",
+		"*.tcc": "cpp"
 	}
 }

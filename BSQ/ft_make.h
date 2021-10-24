@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_first.h                                    :+:      :+:    :+:   */
+/*   ft_make.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 00:53:12 by byan              #+#    #+#             */
-/*   Updated: 2021/10/23 00:58:19 by byan             ###   ########seoul.kr  */
+/*   Created: 2021/10/22 20:32:40 by byan              #+#    #+#             */
+/*   Updated: 2021/10/24 17:10:11 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_READ_FIRST_H
-# define FT_READ_FIRST_H
+#ifndef FT_MAKE_H
+# define FT_MAKE_H
 
 # include "ft_main_header.h"
 
