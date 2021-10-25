@@ -6,14 +6,13 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:50:58 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 13:44:16 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 19:34:35 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MAIN_HEADER_H
 # define FT_MAIN_HEADER_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>

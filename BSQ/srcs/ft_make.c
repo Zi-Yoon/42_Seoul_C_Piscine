@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:43 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 13:44:16 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 19:34:50 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_bsq	ft_make_box(t_bsq data)
 
 	i = -1;
 	data.map = (int **)malloc(sizeof(int *) * data.map_row);
-	while (++i < data.map_col)
+	while (++i < data.map_row)
 		data.map[i] = (int *)malloc(sizeof(int) * data.map_col);
 	data = ft_make_filled_box(data);
 	return (data);

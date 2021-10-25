@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:15:27 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 13:31:49 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 19:27:55 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ t_bsq	ft_map_reset(t_bsq data)
 {
 	data.map_row = 0;
 	data.map_col = 0;
-	data.f_name = 0;
 	data.eliments_len = 0;
+	data.ans_x = 0;
+	data.ans_y = 0;
+	data.error = 0;
 	return (data);
 }
 
