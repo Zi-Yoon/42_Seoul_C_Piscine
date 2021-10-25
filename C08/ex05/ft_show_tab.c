@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 03:58:21 by byan              #+#    #+#             */
-/*   Updated: 2021/10/19 04:45:45 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 15:25:16 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	ft_itoa_print(long long num)
 void	ft_putnbr(int nb)
 {
 	long long	num;
-	int			len;
 
 	num = nb;
 	if (num == 0)
