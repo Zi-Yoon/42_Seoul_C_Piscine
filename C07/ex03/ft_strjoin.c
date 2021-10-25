@@ -6,13 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:35 by byan              #+#    #+#             */
-/*   Updated: 2021/10/17 14:46:16 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 11:53:20 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -50,7 +48,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	max_len = 0;
 	while (i--)
 		max_len += ft_strlen(strs[i]);
-	ans = (char *)malloc(max_len + ft_strlen(*sep) * (size + 1) - 1);
+	ans = (char *)malloc(max_len + ft_strlen(sep) * (size + 1) - 1);
 	i = 0;
 	while (i < size)
 	{

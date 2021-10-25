@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:02:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/14 20:18:18 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 11:47:30 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	ft_strcpy(char *dest, char *src)
 
 char	*ft_strdup(char *src)
 {
-	int		index;
 	char	*dest;
 	int		len;
 

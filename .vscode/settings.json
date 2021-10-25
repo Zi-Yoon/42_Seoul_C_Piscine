@@ -9,6 +9,9 @@
 		"type_traits": "c",
 		"ft_final.h": "c",
 		"limits": "c",
-		"*.tcc": "cpp"
+		"*.tcc": "cpp",
+		"ft_make.h": "c",
+		"ft_error.h": "c",
+		"ft_bsq.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:02 by byan              #+#    #+#             */
-/*   Updated: 2021/10/14 20:23:25 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 11:52:05 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int	*ft_range(int min, int max)
 	arr = (int *)malloc(sizeof(int) * size);
 	while (min < max)
 	{
-		arr[i++] = min++;
+		arr[i] = min;
+		i++;
+		min++;
 	}
 	return (arr);
 }
