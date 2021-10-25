@@ -6,23 +6,11 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:43 by byan              #+#    #+#             */
-/*   Updated: 2021/10/24 23:25:06 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 13:44:16 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_make.h"
-
-int	ft_min_three(int a, int b, int c)
-{
-	if (a <= b && a <= c)
-		return (a);
-	else if (b <= a && b <= c)
-		return (b);
-	else if (c <= a && c <= b)
-		return (c);
-	else
-		return (0);
-}
 
 /* run this function */
 t_bsq	ft_make_box(t_bsq data)
@@ -45,7 +33,8 @@ t_bsq	ft_make_filled_box(t_bsq data)
 
 	i = 0;
 	data.file = open(data.f_name, O_RDONLY);
-	while (read(data.file, &temp, 1) != 0 && temp != '\n');
+	while (read(data.file, &temp, 1) != 0 && temp != '\n')
+		;
 	while (i < data.map_row)
 	{
 		j = -1;
@@ -62,9 +51,7 @@ t_bsq	ft_make_filled_box(t_bsq data)
 				data = ft_map_error(data);
 		}
 	}
-	close(data.file);
-	data = ft_make_len_map(data);
-	return (data);
+	return (ft_make_len_map(data));
 }
 
 t_bsq	ft_make_len_map(t_bsq data)
@@ -79,12 +66,19 @@ t_bsq	ft_make_len_map(t_bsq data)
 		while (++y < data.map_col)
 		{
 			if (data.map[x][y] != 0)
-				data.map[x][y] = ft_min_three(
-					data.map[x - 1][y - 1], 
-					data.map[x - 1][y], 
-					data.map[x][y - 1]) + 1;
+				data.map[x][y] = ft_min_three(data.map[x - 1][y - 1],
+						data.map[x - 1][y], data.map[x][y - 1]) + 1;
 		}
 	}
+	data = ft_find_max_len(data);
+	return (data);
+}
+
+t_bsq	ft_find_max_len(t_bsq data)
+{
+	int	x;
+	int	y;
+
 	x = data.map_row;
 	data.max = 0;
 	while (--x >= 0)
@@ -93,12 +87,32 @@ t_bsq	ft_make_len_map(t_bsq data)
 		while (--y >= 0)
 		{
 			if (data.max < data.map[x][y])
-			{
 				data.max = data.map[x][y];
+		}
+	}
+	data = ft_find_ans_x_y(data);
+	return (data);
+}
+
+t_bsq	ft_find_ans_x_y(t_bsq data)
+{
+	int	x;
+	int	y;
+
+	x = -1;
+	while (x++ < data.map_row)
+	{
+		y = -1;
+		while (y++ < data.map_col)
+		{
+			if (data.max == data.map[x][y])
+			{
 				data.ans_x = x;
 				data.ans_y = y;
+				return (data);
 			}
 		}
 	}
+	close(data.file);
 	return (data);
 }
