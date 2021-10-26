@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/20 01:38:50 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/25 19:44:54 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_check_base(char *base)
 	return (i);
 }
 
-long long	ft_atoi_base_edit(char *str, char *base)
+long long	ft_atoi_base(char *str, char *base)
 {
 	int	len;
 	int	cnt;
@@ -51,8 +51,10 @@ long long	ft_atoi_base_edit(char *str, char *base)
 	cnt = 0;
 	minus = 1;
 	len = ft_check_base(base);
-	while (((*str >= 9 && *str <= 13) || (*str >= 32 && *str <= 47)
-			|| (*str >= 58 && *str <= 126)) && *str != '+' && *str != '-')
+	if (len == 0)
+		return (0);
+	while (str[cnt] == '\t' || str[cnt] == '\n' || str[cnt] == '\v'
+		|| str[cnt] == '\f' || str[cnt] == '\r' || str[cnt] == ' ')
 		cnt++;
 	while ((str[cnt] == '+' || str[cnt] == '-') && str[cnt])
 	{
@@ -103,7 +105,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	after = ft_check_base(base_to);
 	if (now == 0 || after == 0)
 		return (0);
-	digit = ft_atoi_base_edit(nbr, base_from);
+	digit = ft_atoi_base(nbr, base_from);
 	len = ft_len(digit, after);
 	if (digit < 0)
 		len++;

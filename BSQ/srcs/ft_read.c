@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 00:53:14 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 13:37:48 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 18:52:20 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_bsq	ft_no_argv(t_bsq data)
 	i = -1;
 	len = 0;
 	data.map_row = 0;
-	data.file = open("no_argv1", O_RDWR | O_CREAT, 0777);
+	data.file = open("no_argv", O_RDWR | O_CREAT | O_TRUNC, 0777);
 	while (1)
 	{
 		write(data.file, &tmp, read(0, &tmp, 1));
@@ -117,7 +117,7 @@ t_bsq	ft_no_argv_two(t_bsq data)
 	char	file[1000];
 
 	i = 0;
-	data.file = open("no_argv2", O_RDWR | O_CREAT, 0777);
+	data.file = open("no_argv", O_RDWR | O_CREAT | O_TRUNC, 0777);
 	ft_strcpy(file, data.temp);
 	write(data.file, &file, data.eliments_len + 1);
 	while (i < data.map_row)

@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:21 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 19:34:41 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 18:52:32 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 		data = ft_no_argv(data);
 		data = ft_no_argv_two(data);
 		data = ft_map_reset(data);
-		ft_start_run("no_argv2", data);
+		ft_start_run("no_argv", data);
 		return (0);
 	}
 	else
