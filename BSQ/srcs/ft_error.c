@@ -6,11 +6,25 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:15:27 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 19:27:55 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 19:54:53 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_error.h"
+
+t_bsq	ft_check_read(t_bsq data)
+{
+	int		i_temp;
+	char	temp;
+
+	i_temp = open(data.f_name, O_RDONLY);
+	if (read(i_temp, &temp, 1) < 0)
+		data = ft_map_error(data);
+	if (i_temp < 0)
+		data = ft_map_error(data);
+	close(i_temp);
+	return (data);
+}
 
 t_bsq	ft_map_error(t_bsq data)
 {
@@ -42,6 +56,11 @@ t_bsq	ft_map_reset(t_bsq data)
 	data.ans_x = 0;
 	data.ans_y = 0;
 	data.error = 0;
+	data.empty = 0;
+	data.f_name = 0;
+	data.fill = 0;
+	data.obs = 0;
+	data.temp[0] = 0;
 	return (data);
 }
 

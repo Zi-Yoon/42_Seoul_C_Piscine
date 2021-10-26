@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 00:53:14 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 18:52:20 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 19:20:26 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int	ft_size(t_bsq data)
 
 	size = 0;
 	tem_file = open(data.f_name, O_RDONLY);
+	if (tem_file == -1)
+	{
+		ft_map_error(data);
+		return (0);
+	}
 	while (read(tem_file, &temp, 1) != 0)
 		size++;
 	size = size - data.eliments_len - 1;

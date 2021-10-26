@@ -6,13 +6,14 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:50:58 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 19:34:35 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 19:32:38 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MAIN_HEADER_H
 # define FT_MAIN_HEADER_H
 
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -62,5 +63,6 @@ t_bsq	ft_map_reset(t_bsq data);
 char	*ft_strcpy(char *dest, char *src);
 t_bsq	ft_find_max_len(t_bsq data);
 t_bsq	ft_find_ans_x_y(t_bsq data);
+t_bsq	ft_check_read(t_bsq data);
 
 #endif

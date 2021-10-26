@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:01:40 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 18:56:03 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 19:37:48 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 t_bsq	ft_start_run(char *argv, t_bsq data)
 {
 	data.f_name = argv;
+	data = ft_check_read(data);
+	if (data.error == 1)
+		return (data);
 	data = ft_read_eliments(data);
+	if (data.error == 1)
+		return (data);
 	data = ft_set_num_col(data);
+	if (data.error == 1)
+		return (data);
 	data = ft_make_box(data);
 	data = ft_draw_map(data);
 	if (data.error == 1)
-	{
-		free(*data.c_map);
-		free(data.c_map);
-		free(data.map);
 		return (data);
-	}
 	data = ft_make_print_bsq(data);
 	free(*data.c_map);
 	free(data.c_map);
