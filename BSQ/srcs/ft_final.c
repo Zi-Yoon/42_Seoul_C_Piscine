@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:01:40 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 19:37:48 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 21:55:51 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,5 @@ t_bsq	ft_start_run(char *argv, t_bsq data)
 	if (data.error == 1)
 		return (data);
 	data = ft_make_print_bsq(data);
-	free(*data.c_map);
-	free(data.c_map);
-	free(data.map);
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 00:53:14 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 19:20:26 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 21:50:02 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,6 @@ t_bsq	ft_no_argv_two(t_bsq data)
 		if (temp == '\n')
 			i++;
 	}
-	data.f_name = "no_argv2";
+	data.f_name = "no_argv";
 	return (data);
 }

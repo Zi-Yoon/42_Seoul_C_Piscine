@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:49 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 13:26:04 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 21:53:48 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_bsq	ft_draw_map(t_bsq data)
 	int	y;
 
 	i = -1;
-	data.c_map = malloc(sizeof(char *) * data.map_row);
+	data.c_map = (char **)malloc(sizeof(char *) * data.map_row);
 	while (++i < data.map_row)
-		data.c_map[i] = malloc(sizeof(char) * data.map_col + 1);
+		data.c_map[i] = (char *)malloc(sizeof(char) * data.map_col + 1);
 	x = -1;
 	while (++x < data.map_row)
 	{
@@ -42,7 +42,7 @@ t_bsq	ft_draw_map(t_bsq data)
 			else
 				data.c_map[x][y] = data.empty;
 		}
-		data.c_map[x][y] = '\n';
+		data.c_map[x][y] = '\0';
 	}
 	return (data);
 }
@@ -70,6 +70,9 @@ t_bsq	ft_make_print_bsq(t_bsq data)
 	}
 	i = -1;
 	while (++i < data.map_row)
+	{
 		ft_putstr(data.c_map[i]);
+		ft_putstr("\n");
+	}
 	return (data);
 }
