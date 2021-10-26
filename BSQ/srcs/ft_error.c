@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:15:27 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 19:54:53 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/26 20:35:48 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_bsq	ft_check_read(t_bsq data)
 t_bsq	ft_map_error(t_bsq data)
 {
 	if (data.error == 0)
-		write(1, "map error\n", 10);
+		write(2, "map error\n", 10);
 	data.error = 1;
 	if (data.last_file_num == data.now_file_num)
 		exit(0);
