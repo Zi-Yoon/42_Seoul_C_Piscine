@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:02:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/27 11:04:55 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/27 12:28:01 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strdup(char *src)
 		return (0);
 	else
 	{
-		dest = (char *)malloc(sizeof(char) + 1);
+		dest = (char *)malloc(sizeof(char) * len + 1);
 		ft_strcpy(dest, src);
 		return (dest);
 	}
