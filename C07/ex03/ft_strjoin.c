@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:35 by byan              #+#    #+#             */
-/*   Updated: 2021/10/27 11:50:08 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/27 14:59:33 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,14 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (--i)
 		max_len += ft_strlen(strs[i]);
 	max_len = max_len + (size - 1) * ft_strlen(sep);
-	ans = (char *)malloc(max_len + 1);
+	if (size <= 0)
+	{
+		ans = (char *)malloc(sizeof(char));
+		ans[0] = '\0';
+		return (ans);
+	}
+	else
+		ans = (char *)malloc(sizeof(char) * max_len + 1);
 	i = 0;
 	while (i < size)
 	{

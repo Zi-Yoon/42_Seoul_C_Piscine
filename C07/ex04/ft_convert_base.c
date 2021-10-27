@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:50 by byan              #+#    #+#             */
-/*   Updated: 2021/10/25 19:44:54 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/27 14:52:02 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int	ft_check_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-')
-			return (0);
-		if (base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
+		if (base[i] == '+' || base[i] == '-' ||
+			base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
 			return (0);
 		j = i + 1;
 		while (base[j])
