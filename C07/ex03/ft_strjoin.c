@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 04:03:35 by byan              #+#    #+#             */
-/*   Updated: 2021/10/27 14:59:33 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/27 15:14:39 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (i < size)
 	{
 		ft_strcat(ans, strs[i]);
-		if (i == size - 1)
-			break ;
 		ft_strcat(ans, sep);
 		i++;
 	}
