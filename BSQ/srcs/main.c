@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:21 by byan              #+#    #+#             */
-/*   Updated: 2021/10/28 11:20:22 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/28 20:48:30 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char *argv[])
 		{
 			data = ft_map_reset(data);
 			data = ft_start_run(argv[data.now_file_num], data);
+			write(1, "\n", 1);
 		}
 		return (0);
 	}
