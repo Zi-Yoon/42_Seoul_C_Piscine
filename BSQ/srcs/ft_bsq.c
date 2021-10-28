@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:32:49 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 21:53:48 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/28 11:20:20 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,9 @@ t_bsq	ft_make_print_bsq(t_bsq data)
 	while (++x_len <= data.max)
 	{
 		y_len = 0;
-		y = data.ans_y;
+		y = data.ans_y + 1;
 		while (++y_len <= data.max)
-		{
-			data.c_map[x][y] = data.fill;
-			y--;
-		}
+			data.c_map[x][--y] = data.fill;
 		x--;
 	}
 	i = -1;

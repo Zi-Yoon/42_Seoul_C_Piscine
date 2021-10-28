@@ -6,7 +6,7 @@
 /*   By: byan <byan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 20:50:58 by byan              #+#    #+#             */
-/*   Updated: 2021/10/26 21:56:33 by byan             ###   ########seoul.kr  */
+/*   Updated: 2021/10/28 11:20:27 by byan             ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ char	*ft_strcpy(char *dest, char *src);
 t_bsq	ft_find_max_len(t_bsq data);
 t_bsq	ft_find_ans_x_y(t_bsq data);
 t_bsq	ft_check_read(t_bsq data);
+t_bsq	ft_free_all(t_bsq data);
 
 #endif
